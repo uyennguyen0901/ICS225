@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="text/html+xml; charset=utf-8" http-equiv="content-type" />
+	<title>CSS Animation Experiment Page</title>
+
+<style>
+
+/*This CSS is provided with the template; you do not edit HERE, edit the css_animation.css instead*/
+
+/* 
+@media (prefers-color-scheme: dark){
+	body {
+		color:white;
+		background-color:black;
+	}	
+}
+ */
+section{
+	margin-bottom: 2em;
+}
+.vGap{
+	width:1px;
+	height:1px;
+	margin-bottom: 5em;
+}
+
+section div {
+	padding: 15px;
+	border: solid 2px green;
+	background-color: gray;
+	width: 12em;
+	text-align: center;
+}
+
+section.timing_compare > div {/* all SECTION tags with the class "timing_compare" and who's direct children are DIV  */
+	padding-left: 0px; padding-right: 0px; /* this helps with the look of these; notice the text forces text to overflow when the box is too narrow */
+	margin: 1px;
+	width: 10%;
+	overflow: hidden;
+}
+
+button {
+	font-size: 2em;
+}
+
+.combo_deal{
+	border: 2px dotted gray;
+	text-align:center;
+}
+.combo_deal div {
+	margin:2px;	
+	padding:2px;
+	display:inline-block;
+}
+</style>
+	
+	<link type="text/css" media="all" href="css_animation.css" rel="stylesheet" />
+	
+</head>
+<body>
+
+<!-- CSS transition experiments -->
+
+
+<section><div class="transition1">transition 1 way</div></section>
+
+
+<section><div class="transition2">transition 2 way</div></section>
+
+
+<!-- CSS animation experiments -->
+
+
+<section><div>Control<!-- Every good experiment has a control --></div></section>
+
+<section class="timing_compare">
+	<div class="Default">Default</div>
+	<div class="Linear">Linear</div>
+	<div class="EaseIn">EaseIn</div>
+	<div class="EaseOut">EaseOut</div>
+	<div class="EaseInOut">EaseInOut</div>
+	<div class="Custom">bezier1,0,0,1</div>
+	<div class="Step">Step10</div>
+</section>
+
+<section><div class="zoom">zoom</div></section>
+
+<div class="vGap"></div>
+
+
+<section><div class="rotate">rotate</div></section>
+
+
+<div class="vGap"></div>
+<div class="vGap"></div>
+<div class="vGap"></div>
+
+<section><div class="hammer">hammer</div></section>
+
+<!-- Walk is just for fun: -->
+<section class="walkParent"><div class="walk">walk</div></section>
+
+
+<div class="vGap"></div>
+
+
+<section><div class="DDD">DDD</div></section>
+
+
+<section><div class="FUN">FUN</div></section>
+
+
+<div class="vGap"></div>
+
+<!-- Advanced CSS transition experiments -->
+
+
+<!-- Hard but only a few lines of CSS! -->
+<section class="combo_deal">
+	<div>Combo
+		<div>Combo
+			<div>Combo
+				<div>Combo
+					<div>Combo
+						<div>Combo
+							<div>Combo
+								<div>Combo</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+<div class="vGap"></div>
+
+
+
+
+<!-- for fun and/or CHALLENGE -->
+<span id="DDD_nest" style="display:inline-block;">
+	<button id="D1">1</button>
+	<button id="D2">45</button>
+	<button id="D3">90</button>
+	<button id="D4">135</button>
+	<button id="D5">180</button>
+</span>
+
+
+<div class="vGap"></div>
+
+
+<!-- you may ignore the below code but if you are curious you could try to understand it, it's used for the mouse reactive animation -->
+<script>
+// javascript simple mouse tracking
+//	innerWidth === window.innerWidth
+var transitionDemo = document.getElementById('DDD_nest');
+if( transitionDemo ){
+	document.body.addEventListener('mousemove' ,function(e){
+		transitionDemo.style.transform =	' perspective(12em) rotateY(-' + 360*(e.clientX / innerWidth) +'deg)';
+	});
+	//C0DE: mousemoveCSS
+	try{
+		function hello(){alert('Buttons still work when transformed!');}
+		transitionDemo.querySelectorAll('button').forEach(x=>x.addEventListener('click',hello));
+	}catch(e){}
+}else{
+	console.error('somehow you messed up the HTML in this template that you should not have been editing at all; only edit the external css file.');
+}
+</script>
+</body>
+</html>

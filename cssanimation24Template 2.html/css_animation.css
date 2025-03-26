@@ -1,0 +1,185 @@
+/* STUDENT WORK GOES HERE */
+
+.transition1 {
+    font-size: 16px;
+}
+  
+.transition1:hover {
+    font-size: 200%;
+    transition-property: font-size;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.transition2 {
+    font-size: 16px;
+    transition-property: font-size;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+  
+.transition2:hover {
+    font-size: 200%;
+}
+
+.timing_compare div {
+    animation-name: moveRight;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    
+}
+
+@keyframes moveRight {
+    from { margin-left: 0%; }
+    to { margin-left: 90%; }
+}
+
+.Default {
+    animation-timing-function: ease;
+}
+
+.Linear {
+    animation-timing-function: linear;
+}
+
+.EaseIn {
+    animation-timing-function: ease-in;
+}
+
+.EaseOut {
+    animation-timing-function: ease-out;
+}
+
+.EaseInOut {
+    animation-timing-function: ease-in-out;
+}
+
+.Custom {
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.Step {
+    animation-timing-function: steps(10, end);
+}
+
+.rotate {
+    transform: rotate(0deg);
+    animation-name: rotate-animation;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes rotate-animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.hammer{
+    transform-origin: top left;
+    animation-name: hammer-swing;
+    animation-duration: 1s;
+    /* animation-timing-function: cubic-bezier(0.2, 0, 0.4, 0); */
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes hammer-swing {
+    from {
+        transform: rotate(-90deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+.zoom {
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+@keyframes zoomInOut {
+    0%   { transform: scale(0.8); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(0.8); }
+}
+
+.walk {
+    animation: walkCycle 2s infinite ease-in-out;
+}
+  
+@keyframes walkCycle {
+    0% {
+        transform: rotate(10deg);
+        transform-origin: bottom left;
+    }
+    50% {
+        transform: rotate(-10deg);
+        transform-origin: bottom right;
+    }
+    100% {
+        transform: rotate(10deg);
+        transform-origin: bottom left;
+    }
+}
+.DDD{
+    animation: spin3D 2s linear infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes spin3D {
+    from {
+        transform: perspective(200px) rotateY(0deg);
+      }
+      to {
+        transform: perspective(800px) rotateY(360deg);
+      }
+}
+
+@keyframes funMoveAndColor {
+    0% {
+      transform: translateX(0);
+      background-color: rgb(154, 11, 255);
+    }
+    25% {
+      transform: translateX(20px);
+      background-color: rgb(95, 216, 247);
+    }
+    75% {
+      transform: translateX(-20px);
+      background-color: #4CEB66;
+    }
+    100% {
+      transform: translateX(0);
+      background-color: #5000EB;
+    }
+  }
+  
+  .FUN {
+    position: relative;
+    z-index: 1;
+    color: white;
+    overflow: hidden;
+    animation: funMoveAndColor 3s ease-in-out infinite;
+  }
+  
+  .FUN::before,
+  .FUN::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: inherit;
+  }
+.combo_deal div {
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+    transform-origin: top left;
+}
+  
+.combo_deal:hover div {
+    transform: rotate(-45deg);
+}

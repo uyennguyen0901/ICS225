@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>TV Schedule</title>
+        <style type="text/css">
+            body {
+                font-family: Arial, sans-serif;
+                color: white;
+                background-color: #1b1b1f;
+            }
+            h1{
+                font-size: 3em;
+                text-align: center;
+            }
+            table {
+                border-collapse: collapse;
+                width: 80%;
+                text-align: center;
+                margin: 0 auto;
+            }
+            th {
+                padding: 10px;
+            }
+            td {
+                padding: 10px;
+            }
+            .time{
+                border: none;
+                font-size: 1.5em;
+            }
+            /* .hidden-time {
+                visibility: hidden;
+                border: none;
+            } */
+            tbody tr:nth-child(even) th {
+                visibility: hidden;
+                border: none;
+            }
+            td:hover {
+                outline: 2px solid black;
+            }
+            .monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday { 
+                background-color: black; 
+                color: white;
+                font-size: 1.25em;
+            }
+            
+            #schedule-container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            .day-header {
+                font-size: 1.25em;
+                font-weight: bold;
+                border-top: solid thin gray;
+            }
+
+            .event-list {
+                margin-left: 10px;
+                column-gap: 16px;
+                page-break-inside: avoid;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-auto-flow: dense;
+                align-items: start;
+            }
+
+
+            .event-title {
+                font-size: 1em;
+                font-weight: bold;
+            }
+
+            .event-details {
+                font-size: 0.7em;
+            }
+
+            .event-days {
+                font-size: 0.7em;
+            }
+
+
+            @media (min-width: 1200px) {
+                .event-list {
+                    grid-template-columns: repeat(6, 1fr);
+                }
+            }
+
+            @media (max-width: 1199px) and (min-width: 1100px) {
+                .event-list {
+                    grid-template-columns: repeat(5, 1fr);
+                }
+            }
+
+            @media (max-width: 1099px) and (min-width: 900px) {
+                .event-list {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                table {
+                    width: 65%;
+                }
+            }
+
+            @media (max-width: 899px) and (min-width: 600px) {
+                .event-list {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                table {
+                    width: 50%;
+                }
+            }
+
+            @media (max-width: 599px) and (min-width: 400px) {
+                .event-list {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                table {
+                    width: 40%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>TV Schedule</h1>
+        <div id="schedule-table"></div>
+        <div id="schedule-container"></div>
+        <script type="text/javascript">
+        //<!--
+            document.addEventListener("DOMContentLoaded", function () {
+            let scheduleData = [
+                {"l":3,"e":0,"b":0,"s":0,"t":"Ben & Jerry's Show"},
+                {"l":4,"e":1,"b":0,"s":3,"t":"Finding Uyen"},
+                {"l":3,"e":1,"b":0,"s":7,"t":"When Racing Cats Attack"},
+                {"l":1,"e":0,"b":0,"s":10,"t":"Beat with the {thing}"},
+                {"l":1,"e":0,"b":0,"s":11,"t":"12 Old Men"},
+                {"l":1,"e":0,"b":0,"s":12,"t":"All Stuff Considered"},
+                {"l":4,"e":0,"b":0,"s":13,"t":"Fancy Max"},
+                {"l":2,"e":0,"b":0,"s":17,"t":"CSI: Howard"},
+                {"l":4,"e":0,"b":0,"s":19,"t":"McNguyen"},
+                {"l":1,"e":1,"b":0,"s":23,"t":"Gangs of Burnsville"},
+                {"l":2,"e":3,"b":1,"s":0,"t":"The Unbelievable Mile"},
+                {"l":1,"e":4,"b":1,"s":2,"t":"Scooter Story"},
+                {"l":3,"e":3,"b":1,"s":10,"t":"Back to the Sunday"},
+                {"l":1,"e":2,"b":1,"s":13,"t":"Howard Saturday"},
+                {"l":4,"e":2,"b":1,"s":14,"t":"Canon Talk"},
+                {"l":4,"e":2,"b":1,"s":18,"t":"Pay-Per-Download"},
+                {"l":1,"e":1,"b":1,"s":22,"t":"Untracked Viewing"},
+                {"l":4,"e":2,"b":2,"s":3,"t":"Dat and friends"},
+                {"l":3,"e":4,"b":2,"s":7,"t":"Flashing Minh"},
+                {"l":2,"e":2,"b":2,"s":22,"t":"Uyen Playing a Videogame"},
+                {"l":3,"e":3,"b":3,"s":3,"t":"Dances with ICEs"},
+                {"l":1,"e":3,"b":3,"s":6,"t":"It's a Silliest Life"},
+                {"l":3,"e":3,"b":3,"s":13,"t":"We are Went"},
+                {"l":1,"e":4,"b":3,"s":16,"t":"War of Racing Cats"},
+                {"l":3,"e":5,"b":3,"s":17,"t":"Slap with the {thing}"},
+                {"l":1,"e":3,"b":3,"s":20,"t":"King Nguyen"},
+                {"l":3,"e":3,"b":3,"s":21,"t":"The Awful Toe"},
+                {"l":2,"e":4,"b":4,"s":0,"t":"Skipping My Ride"},
+                {"l":2,"e":4,"b":4,"s":3,"t":"I Love Dat"},
+                {"l":2,"e":4,"b":4,"s":5,"t":"Old Thing Society"},
+                {"l":4,"e":4,"b":4,"s":10,"t":"The Young and the Fancy"},
+                {"l":2,"e":4,"b":4,"s":14,"t":"Flashing Mysteries"},
+                {"l":4,"e":5,"b":4,"s":20,"t":"Faux News"},
+                {"l":3,"e":6,"b":5,"s":0,"t":"ICE Game"},
+                {"l":6,"e":5,"b":5,"s":3,"t":"Ow Friday"},
+                {"l":7,"e":5,"b":5,"s":9,"t":"WAIT to Watch This"},
+                {"l":1,"e":5,"b":5,"s":16,"t":"Our Lady of Perpetual Exemption"},
+                {"l":7,"e":6,"b":6,"s":3,"t":"Racing Cat Game"},
+                {"l":3,"e":6,"b":6,"s":10,"t":"Skipping Thursday"},
+                {"l":5,"e":6,"b":6,"s":13,"t":"Printed Gump"},
+                {"l":4,"e":6,"b":6,"s":18,"t":"Ooh Wars"},
+                {"l":2,"e":6,"b":6,"s":22,"t":"Citizen Minh"}
+            ];
+
+
+            let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            let totalTimeSlots = 24;
+            function getRandomColor() {
+                let r = Math.floor(Math.random() * 200);
+                let g = Math.floor(Math.random() * 200);
+                let b = Math.floor(Math.random() * 200);
+                let color = `rgb(${r}, ${g}, ${b})`;
+                let brightness = (r * 0.299 + g * 0.587 + b * 0.114);
+                while (brightness > 180) {  
+                    r = Math.floor(Math.random() * 180); 
+                    g = Math.floor(Math.random() * 180);
+                    b = Math.floor(Math.random() * 180);
+                    color = `rgb(${r}, ${g}, ${b})`;
+                    brightness = (r * 0.299 + g * 0.587 + b * 0.114);
+                }
+                return { bgColor: color };
+            }
+
+
+            function generateTable(data) {
+                let table = document.createElement("table");
+                let thead = document.createElement("thead");
+                let tbody = document.createElement("tbody");
+
+                let headerRow = document.createElement("tr");
+
+                let timeHeader = document.createElement("th");
+                timeHeader.id = "Time";
+                timeHeader.className = "time";
+                timeHeader.textContent = "";
+                headerRow.appendChild(timeHeader);
+
+                days.forEach(day => {
+                    let th = document.createElement("th");
+                    th.id = day;
+                    th.className = day.toLowerCase();
+                    th.textContent = day;
+                    headerRow.appendChild(th);
+                });
+
+                thead.appendChild(headerRow);
+
+                let scheduleMatrix = Array.from({ length: totalTimeSlots }, () => Array(7).fill(null));
+
+                data.forEach(show => {
+                    let row = show.s;  
+                    let col = show.b;  
+                    let rowspan = show.l;  
+                    let colspan = show.e - show.b + 1;
+
+                    console.log(`Show: "${show.t}", Start Time: ${row}, Start Day: ${days[col]}, RowSpan: ${rowspan}, ColSpan: ${colspan}`);
+
+                    scheduleMatrix[row][col] = { name: show.t, rowspan, colspan };
+
+                    for (let i = 0; i < rowspan; i++) {
+                        for (let j = 0; j < colspan; j++) {
+                            if (i === 0 && j === 0) continue;
+                            scheduleMatrix[row + i][col + j] = "SPAN";
+                        }
+                    }
+                });
+
+                for (let i = 0; i < totalTimeSlots; i++) {
+                    let tr = document.createElement("tr");
+
+                    let timeSlot = formatTime(i);
+
+                    let timeCell = document.createElement("th");
+                    timeCell.id = timeSlot;
+                    timeCell.scope = "row";
+                    timeCell.className = "time";
+                    timeCell.textContent = timeSlot;
+                    tr.appendChild(timeCell);
+
+                    for (let j = 0; j < 7; j++) {
+                        if (scheduleMatrix[i][j] === "SPAN") continue;
+
+                        let td = document.createElement("td");
+                        td.className = "colorCell";
+                        let color = getRandomColor(); // Get random color
+                        td.style.backgroundColor = color.bgColor;
+                        td.style.color = color.textColor;
+
+                        if (scheduleMatrix[i][j]) {
+                            td.textContent = scheduleMatrix[i][j].name;
+                            td.rowSpan = scheduleMatrix[i][j].rowspan;
+                            td.colSpan = scheduleMatrix[i][j].colspan;
+                            td.setAttribute("headers", `${days[j]} ${timeSlot}`);
+                        }
+                        tr.appendChild(td);
+                    }
+                    tbody.appendChild(tr);
+                }
+                    table.appendChild(thead);
+                    table.appendChild(tbody);
+                    return table;
+            }
+
+                let scheduleTable = document.getElementById("schedule-table");
+                scheduleTable.appendChild(generateTable(scheduleData));
+                
+                function formatTime(slot) {
+                    let hour = Math.floor(slot / 2) + 12;
+                    let minutes = slot % 2 === 0 ? "00" : "30";
+
+                    if (hour > 12) {
+                        hour -= 12;
+                    } else if (hour === 0) {
+                        hour = 12;
+                    }
+
+                    return `${hour}:${minutes}`;
+                }
+
+                function generateScheduleList(data) {
+                    let scheduleContainer = document.getElementById("schedule-container");
+                    scheduleContainer.innerHTML = ""; 
+
+                    let dayEvents = {};
+                    let seenEvents = new Set(); // Track events already listed
+
+                    data.forEach(event => {
+                        let eventStartTime = formatTime(event.s);
+                        let eventDuration = event.l * 30;
+                        let eventDays = [];
+
+                        for (let d = event.b; d <= event.e; d++) {
+                            eventDays.push(`${days[d]} at ${eventStartTime}`);
+
+                            if (!dayEvents[days[d]]) {
+                                dayEvents[days[d]] = [];
+                            }
+                        }
+
+                        let eventDetails = `
+                            <div class="event">
+                                <div class="event-title"><strong>${event.t}</strong></div>
+                                <div class="event-details">Length: ${eventDuration} minutes <em>(${event.l} timeslot rows)</em></div>
+                                <div class="event-days">${eventDays.join("<br />")}</div>
+                            </div>
+                        `;
+                        let firstDay = eventDays[0].split(" at ")[0];
+
+                        if (!seenEvents.has(event.t)) {
+                            seenEvents.add(event.t);
+                            dayEvents[firstDay].push(eventDetails);
+                        } else {
+                            let lastEntry = dayEvents[firstDay][dayEvents[firstDay].length - 1];
+                            if (lastEntry.includes("</div></div>")) {
+                                lastEntry = lastEntry.replace(
+                                    "</div></div>", 
+                                    `${eventDays.slice(1).map(day => `<div class="event-day">${day}</div>`).join("")}</div></div>`
+                                );
+                            } else {
+                                console.warn("Expected structure not found in lastEntry:", lastEntry);
+                            }
+
+                            dayEvents[firstDay][dayEvents[firstDay].length - 1] = lastEntry;
+                        }
+                    });
+
+                    Object.keys(dayEvents).forEach(day => {
+                        let dayDiv = document.createElement("div");
+                        dayDiv.classList.add("schedule-day");
+
+                        let dayHeader = document.createElement("h2");
+                        dayHeader.textContent = day;
+                        dayHeader.classList.add("day-header");
+                        dayDiv.appendChild(dayHeader);
+
+                        let eventList = document.createElement("div");
+                        eventList.classList.add("event-list");
+
+                        dayEvents[day].forEach(event => {
+                            let eventItem = document.createElement("div");
+                            eventItem.classList.add("event-item");
+                            eventItem.innerHTML = event;
+                            eventList.appendChild(eventItem);
+                        });
+
+                        dayDiv.appendChild(eventList);
+                        scheduleContainer.appendChild(dayDiv);
+                    });
+                }
+
+                generateScheduleList(scheduleData);
+            });
+            //-->
+        </script>
+    </body>
+</html>
+

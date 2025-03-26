@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <!DOCTYPE html> -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>TV Schedule</title>
+    </head>
+    <body>
+        <h1>TV Schedule</h1>
+        <div id="schedule-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th id="Time" class="time"></th>
+                        <th id="Monday" class="monday">Monday</th>
+                        <th id="Tuesday" class="tuesday">Tuesday</th>
+                        <th id="Wednesday" class="wednesday">Wednesday</th>
+                        <th id="Thursday" class="thursday">Thursday</th>
+                        <th id="Friday" class="friday">Friday</th>
+                        <th id="Saturday" class="saturday">Saturday</th>
+                        <th id="Sunday" class="sunday">Sunday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th id="12:00" scope="row" class="time">12:00</th>
+                        <td headers="Monday 12:00" rowspan="3" >Ben &amp; Jerry's Show</td>
+                        <td headers="Tuesday 12:00" rowspan="2" colspan="3" class="schedule-detail2">The Unbelievable Mile</td>
+                        <td headers="Friday 12:00" rowspan="2" class="schedule-detail42">Skipping My Ride</td>
+                        <td headers="Saturday 12:00" rowspan="3" colspan="2" class="schedule-detail3">ICE Game</td>
+                    </tr>
+                    <tr>
+                        <th id="12:30" class="hidden-time" scope="row">12:30</th>
+                    </tr>
+                    <tr>
+                        <th id="1:00" scope="row" class="time">1:00</th>
+                        <td headers="Tuesday 1:00" colspan="4" class="schedule-detail4">Scooter Story</td>
+                    </tr>
+                    <tr>
+                        <th id="1:30" class="hidden-time" scope="row">1:30</th>
+                        <td headers="Monday 1:30" rowspan="4" colspan="2" class="schedule-detail5">Finding Uyen</td>
+                        <td headers="Wednesday 1:30" rowspan="4" class="schedule-detail6">Dat and friends</td>
+                        <td headers="Thursday 1:30" rowspan="3" class="schedule-detail7">Dances with ICEs</td>
+                        <td headers="Friday 1:30" rowspan="2" class="schedule-detail8">I Love Dat</td>
+                        <td headers="Saturday 1:30" rowspan="6" class="schedule-detail9">Ow Friday</td>
+                        <td headers="Sunday 1:30" rowspan="7" class="schedule-detail10">Racing Cat Game</td>
+                    </tr>
+                    <tr>
+                        <th id="2:00" scope="row" class="time">2:00</th>
+                    </tr>
+                    <tr>
+                        <th id="2:30" scope="row" class="hidden-time">2:30</th>
+                        <td headers="Friday 2:30" rowspan="2" class="schedule-detail11">Old Thing Society</td>
+                    </tr>
+                    <tr>
+                        <th id="3:00" scope="row" class="time">3:00</th>
+                        <td headers="Thursday 3:00" class="schedule-detail12">It's a Silliest Life</td>
+                    </tr>
+                    <tr>
+                        <th id="3:30" scope="row" class="hidden-time">3:30</th>
+                        <td headers="Monday 3:30" rowspan="3" colspan="2" class="schedule-detail13">When Racing Cats Attack</td>
+                        <td headers="Wednesday 3:30" rowspan="3" colspan="3" class="schedule-detail14">Flashing Minh</td>
+                    </tr>
+                    <tr>
+                        <th id="4:00" scope="row" class="time">4:00</th>
+                    </tr>
+                    <tr>
+                        <th id="4:30" scope="row" class="hidden-time">4:30</th>
+                        <td headers="Saturday 4:30" rowspan="7" class="schedule-detail15">WAIT to Watch This</td>
+                    </tr>
+                    <tr>
+                        <th id="5:00" scope="row" class="time">5:00</th>
+                        <td headers="Monday 5:00" class="schedule-detail16">Beat with the {thing}</td>
+                        <td headers="Tuesday 5:00" rowspan="3" colspan="3" class="schedule-detail17">Back to the Sunday</td>
+                        <td headers="Friday 5:00" rowspan="4" class="schedule-detail18">The Young and the Fancy</td>
+                        <td headers="Sunday 5:00" rowspan="3" class="schedule-detail19">Skipping Thursday</td>
+                    </tr>
+                    <tr>
+                        <th id="5:30" scope="row" class="hidden-time">5:30</th>
+                        <td headers="Monday 5:30" class="schedule-detail20">12 Old Men</td>
+                    </tr>
+                    <tr>
+                        <th id="6:00" scope="row" class="time">6:00</th>
+                        <td headers="Monday 6:00" class="schedule-detail21">All Stuff Considered</td>
+                    </tr>
+                    <tr>
+                        <th id="6:30" scope="row" class="hidden-time">6:30</th>
+                        <td headers="Monday 6:30" rowspan="4" class="schedule-detail22">Fancy Max</td>
+                        <td headers="Tuesday 6:30" colspan="2" class="schedule-detail23">Howard Saturday</td>
+                        <td headers="Thursday 6:30" rowspan="3" class="schedule-detail24">We are Went</td>
+                        <td headers="Sunday 6:30" rowspan="5" class="schedule-detail25">Printed Gump</td>
+                    </tr>
+                    <tr>
+                        <th id="7:00" scope="row" class="time">7:00</th>
+                        <td headers="Tuesday 7:00" rowspan="4" colspan="2" class="schedule-detail26">Canon Talk</td>
+                        <td headers="Friday 7:00" rowspan="2" class="schedule-detail27">Flashing Mysteries</td>
+                    </tr>
+                    <tr>
+                        <th id="7:30" scope="row" class="hidden-time">7:30</th>
+                    </tr>
+                    <tr>
+                        <th id="8:00" scope="row" class="time">8:00</th>
+                        <td headers="Thursday 8:00" colspan="2" class="schedule-detail28">War of Racing Cats</td>
+                        <td headers="Saturday 8:00" class="schedule-detail29">Our Lady of Perpetual</td>
+                    </tr>
+                    <tr>
+                        <th id="8:30" scope="row" class="hidden-time">8:30</th>
+                        <td headers="Monday 8:30" rowspan="2" class="schedule-detail30">CSI: Howard</td>
+                        <td headers="Thursday 8:30" rowspan="3" colspan="3" class="schedule-detail31">Slap with the {thing}</td>
+                    </tr>
+                    <tr>
+                        <th id="9:00" scope="row" class="time">9:00</th>
+                        <td headers="Tuesday 9:00" rowspan="4" colspan="2" class="schedule-detail32">Pay-Per-Download</td>
+                        <td headers="Sunday 9:00" rowspan="4" class="schedule-detail33">Ooh Wars</td>
+                    </tr>
+                    <tr>
+                        <th id="9:30" scope="row" class="hidden-time">9:30</th>
+                        <td headers="Monday 9:30" rowspan="4" class="schedule-detail34">McMguyen</td>
+                    </tr>
+                    <tr>
+                        <th id="10:00" scope="row" class="time">10:00</th>
+                        <td headers="Thursday 10:00" class="schedule-detail35">King Nguyen</td>
+                        <td headers="Friday 10:00" rowspan="5" colspan="2" class="schedule-detail36">Faux News</td>
+                    </tr>
+                    <tr>
+                        <th id="10:30" scope="row" class="hidden-time">10:30</th>
+                        <td headers="Thursday 10:30" rowspan="3" class="schedule-detail37">The Awful Toe</td>
+                    </tr>
+                    <tr>
+                        <th id="11:00" scope="row" class="time">11:00</th>
+                        <td headers="Tuesday 11:00" class="schedule-detail38">Untracked Viewing</td>
+                        <td headers="Wednesday 11:00" rowspan="2" class="schedule-detail39">Uyen Playing a Videogame</td>
+                        <td headers="Sunday 11:00" rowspan="2" class="schedule-detail40">Citizen Minh</td>
+                    </tr>
+                    <tr>
+                        <th id="11:30" scope="row" class="hidden-time">11:30</th>
+                        <td headers="Monday 11:30" colspan="2" class="schedule-detail41">Gangs of Burnsville</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+ 
+        <div id="schedule-container">
+            <div class="schedule-day">
+                <h2 class="day-header">Monday</h2>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Ben &amp; Jerry's Show</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 12:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Finding Uyen</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 1:30<br>Tuesday at 1:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>When Racing Cats Attack</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 3:30<br>Tuesday at 3:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Beat with the {thing}</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 5:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>12 Old Men</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 5:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>All Stuff Considered</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 6:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Fancy Max</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 6:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>CSI: Howard</strong></div>
+                            <div class="event-details">Length: 60 minutes <em>(2 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 8:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>McNguyen</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 9:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Gangs of Burnsville</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Monday at 11:30<br>Tuesday at 11:30</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <h2 class="day-header">Tuesday</h2>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>The Unbelievable Mile</strong></div>
+                            <div class="event-details">Length: 60 minutes <em>(2 timeslot rows)</em></div>
+                            <div class="event-days">Tuesday at 12:00<br>Wednesday at 12:00<br>Thursday at 12:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Scooter Story</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Tuesday at 1:00<br>Wednesday at 1:00<br>Thursday at 1:00<br>Friday at 1:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Back to the Sunday</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Tuesday at 5:00<br>Wednesday at 5:00<br>Thursday at 5:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Howard Saturday</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Tuesday at 6:30<br>Wednesday at 6:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Canon Talk</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Tuesday at 7:00<br>Wednesday at 7:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Pay-Per-Download</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Tuesday at 9:00<br>Wednesday at 9:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Untracked Viewing</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Tuesday at 11:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <h2 class="day-header">Wednesday</h2>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Dat and friends</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Wednesday at 1:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Flashing Minh</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Wednesday at 3:30<br>Thursday at 3:30<br>Friday at 3:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Uyen Playing a Videogame</strong></div>
+                            <div class="event-details">Length: 60 minutes <em>(2 timeslot rows)</em></div>
+                            <div class="event-days">Wednesday at 11:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <h2 class="day-header">Thursday</h2>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Dances with ICEs</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Thursday at 1:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>It's a Silliest Life</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Thursday at 3:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>We are Went</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Thursday at 6:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>War of Racing Cats</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Thursday at 8:00<br>Friday at 8:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Slap with the {thing}</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Thursday at 8:30<br>Friday at 8:30<br>Saturday at 8:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>King Nguyen</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Thursday at 10:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>The Awful Toe</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Thursday at 10:30</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <h2 class="day-header">Friday</h2>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Skipping My Ride</strong></div>
+                            <div class="event-details">Length: 60 minutes <em>(2 timeslot rows)</em></div>
+                            <div class="event-days">Friday at 12:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>I Love Dat</strong></div>
+                            <div class="event-details">Length: 60 minutes <em>(2 timeslot rows)</em></div>
+                            <div class="event-days">Friday at 1:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Old Thing Society</strong></div>
+                            <div class="event-details">Length: 60 minutes <em>(2 timeslot rows)</em></div>
+                            <div class="event-days">Friday at 2:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>The Young and the Fancy</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Friday at 5:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Flashing Mysteries</strong></div>
+                            <div class="event-details">Length: 60 minutes <em>(2 timeslot rows)</em></div>
+                            <div class="event-days">Friday at 7:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Faux News</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Friday at 10:00<br>Saturday at 10:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <h2 class="day-header">Saturday</h2>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>ICE Game</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Saturday at 12:00<br>Sunday at 12:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Ow Friday</strong></div>
+                            <div class="event-details">Length: 180 minutes <em>(6 timeslot rows)</em></div>
+                            <div class="event-days">Saturday at 1:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>WAIT to Watch This</strong></div>
+                            <div class="event-details">Length: 210 minutes <em>(7 timeslot rows)</em></div>
+                            <div class="event-days">Saturday at 4:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Our Lady of Perpetual Exemption</strong></div>
+                            <div class="event-details">Length: 30 minutes <em>(1 timeslot rows)</em></div>
+                            <div class="event-days">Saturday at 8:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="schedule-day">
+                <h2 class="day-header">Sunday</h2>
+                <div class="event-list">
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Racing Cat Game</strong></div>
+                            <div class="event-details">Length: 210 minutes <em>(7 timeslot rows)</em></div>
+                            <div class="event-days">Sunday at 1:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Skipping Thursday</strong></div>
+                            <div class="event-details">Length: 90 minutes <em>(3 timeslot rows)</em></div>
+                            <div class="event-days">Sunday at 5:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Printed Gump</strong></div>
+                            <div class="event-details">Length: 150 minutes <em>(5 timeslot rows)</em></div>
+                            <div class="event-days">Sunday at 6:30</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Ooh Wars</strong></div>
+                            <div class="event-details">Length: 120 minutes <em>(4 timeslot rows)</em></div>
+                            <div class="event-days">Sunday at 9:00</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event">
+                            <div class="event-title"><strong>Citizen Minh</strong></div>
+                            <div class="event-details">Length: 60 minutes <em>(2 timeslot rows)</em></div>
+                            <div class="event-days">Sunday at 11:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://domfu.com/app5/db/html1/htmlTableGraderHelper.js" type="text/javascript"></script>
+    </body>
+</html>
+
