@@ -3,6 +3,91 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>CSS Menu</title>
+        <style>
+            body {
+                background-image: url(backgroundimage.jpeg);
+                font-size: 19px;
+                padding: 8px;
+                margin: 3px;
+                display: flex;
+                justify-content: center;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            ul > li {
+                display: inline-block;
+                position: relative;
+            }
+
+            ul > li > a {
+                display: block;
+                padding: 8px;
+                background-color: black;
+                color: white;
+                border: 3px outset black;
+                border-radius: 16px;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            ul > li > a:hover {
+                border-style: inset;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            ul li ul {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                box-shadow: 8px 8px 16px white;
+                border-bottom-left-radius: 16px;
+                border-bottom-right-radius: 16px;
+                padding: 0;
+                z-index: 1;
+            }
+
+            ul li:hover ul {
+                display: block;
+            }
+
+            ul li ul li {
+                display: block;
+                margin: 3px 0;
+            }
+
+            ul li ul li > a{
+                display: block;
+                width: 100%;
+                padding: 8px;
+                text-decoration: none;
+                color: black;
+                background-color: rgba(0, 0, 255, 0.7);
+                text-align: left;
+                border-radius: 0px;
+                border-style: none;
+            }
+
+            ul li ul li > a:hover {
+                background-color: black;
+                color: white;
+                border-radius: 0px;
+                border-style: none;
+            }
+
+            ul li ul li:active {
+                background-color: red;
+                color: white;
+            }
+
+        </style>
     </head>
     <body>
         <ul>
@@ -40,6 +125,5 @@
                 </ul>
             </li>
         </ul>
-        <script src="https://domfu.com/app5/db/htmloutline/htmloutline_checker.js" type="text/javascript"></script>
     </body>
 </html>
